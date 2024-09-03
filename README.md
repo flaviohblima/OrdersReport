@@ -1,2 +1,5 @@
 # OrdersTracker
-Spring Boot App to process an Orders queue from a RabbitMQ and persist to a PostgreSQL database.
+Aplicação Spring Boot para processar uma fila de pedidos de um RabbitMQ e persistir em um banco de dados PostgeSQL.
+
+## Plano de ação inicial
+Descrito no arquivo [plano-acao-inicial](plano-acao-inicial.md).
