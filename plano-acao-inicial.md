@@ -8,7 +8,7 @@ As tarefas foram estimadas usando a sequência de Fibonacci.
 Estimativa total: **35 horas**
 
 ### História 1: Planejamento
-- Tarefa 1 **[2 horas]**: Criar este esboço do plano de desenvolvimento, definindo as tarefas e os componentes principais (aplicação Spring Boot, RabbitMQ, PostgreSQL).
+- [x] Tarefa 1 **[2 horas]**: Criar este esboço do plano de desenvolvimento, definindo as tarefas e os componentes principais (aplicação Spring Boot, RabbitMQ, PostgreSQL).
 
 ### História 2: Criar aplicação e implementar recepção de mensagens
 - Tarefa 2 **[1 hora]**: Criar a estrutura inicial do projeto Spring Boot com Java 21, configurando a conexão com o PostgreSQL.
