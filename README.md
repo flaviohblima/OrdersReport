@@ -1,4 +1,4 @@
-# OrdersTracker
+# OrdersReport
 Aplicação Spring Boot para processar uma fila de pedidos de um RabbitMQ e persistir em um banco de dados PostgeSQL.
 
 ## Plano de ação inicial
