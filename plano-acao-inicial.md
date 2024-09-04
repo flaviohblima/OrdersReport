@@ -11,7 +11,7 @@ Estimativa total: **35 horas**
 - [x] Tarefa 1 **[2 horas]**: Criar este esboço do plano de desenvolvimento, definindo as tarefas e os componentes principais (aplicação Spring Boot, RabbitMQ, PostgreSQL).
 
 ### História 2: Criar aplicação e implementar recepção de mensagens
-- Tarefa 2 **[1 hora]**: Criar a estrutura inicial do projeto Spring Boot com Java 21, configurando a conexão com o PostgreSQL.
+- [x] Tarefa 2 **[1 hora]**: Criar a estrutura inicial do projeto Spring Boot com Java 21, configurando a conexão com o PostgreSQL.
 - Tarefa 3 **[5 horas]**: Implementar o microsserviço para consumir mensagens da fila RabbitMQ e armazenar os dados no PostgreSQL (modelagem das tabelas).
 - Tarefa 4 **[2 horas]**: Configurar o Dockerfile e Docker Compose para orquestrar a aplicação, o RabbitMQ e o PostgreSQL.
 - Tarefa 5 **[3 horas]**: Implementar uma forma de publicar mensagens via REST no RabbitMQ para testes.
