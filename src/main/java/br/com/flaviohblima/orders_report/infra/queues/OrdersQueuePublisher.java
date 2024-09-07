@@ -1,6 +1,6 @@
 package br.com.flaviohblima.orders_report.infra.queues;
 
-import br.com.flaviohblima.orders_report.domain.EnqueuedOrder;
+import br.com.flaviohblima.orders_report.domain.CreateOrderData;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Value;
@@ -20,8 +20,8 @@ public class OrdersQueuePublisher {
         this.queueName = queueName;
     }
 
-    public void publishOrderToQueue(EnqueuedOrder enqueuedOrder) {
-        log.debug(enqueuedOrder.toString());
-        rabbitmq.convertAndSend(queueName, enqueuedOrder);
+    public void publishOrderToQueue(CreateOrderData createOrderData) {
+        log.debug(createOrderData.toString());
+        rabbitmq.convertAndSend(queueName, createOrderData);
     }
 }

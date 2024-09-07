@@ -1,6 +1,6 @@
 package br.com.flaviohblima.orders_report.infra.persistence;
 
-import br.com.flaviohblima.orders_report.domain.EnqueuedOrder;
+import br.com.flaviohblima.orders_report.domain.CreateOrderData;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -33,10 +33,10 @@ public class Order {
     @OneToMany(mappedBy = "order", cascade = CascadeType.PERSIST)
     private List<Item> itens = new ArrayList<>();
 
-    public Order(EnqueuedOrder enqueuedOrder) {
-        this.codigoPedido = enqueuedOrder.codigoPedido();
-        this.codigoCliente = enqueuedOrder.codigoCliente();
-        this.itens = enqueuedOrder.itens().stream()
+    public Order(CreateOrderData createOrderData) {
+        this.codigoPedido = createOrderData.codigoPedido();
+        this.codigoCliente = createOrderData.codigoCliente();
+        this.itens = createOrderData.itens().stream()
                 .map(item -> new Item(item, this))
                 .toList();
     }

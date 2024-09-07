@@ -1,6 +1,6 @@
 package br.com.flaviohblima.orders_report.infra.persistence;
 
-import br.com.flaviohblima.orders_report.domain.EnqueuedItem;
+import br.com.flaviohblima.orders_report.domain.CreateItemData;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
@@ -32,7 +32,7 @@ public class Item {
     @JoinColumn(name = "order_id", nullable = false)
     private Order order;
 
-    public Item(EnqueuedItem item, Order order) {
+    public Item(CreateItemData item, Order order) {
         this.produto = item.produto();
         this.quantidade = item.quantidade();
         this.preco = item.preco();

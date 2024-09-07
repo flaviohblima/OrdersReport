@@ -1,7 +1,7 @@
 package br.com.flaviohblima.orders_report.application;
 
-import br.com.flaviohblima.orders_report.domain.EnqueuedOrder;
-import br.com.flaviohblima.orders_report.infra.persistence.Order;
+import br.com.flaviohblima.orders_report.domain.CreateOrderData;
+import br.com.flaviohblima.orders_report.domain.OrderDetails;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -15,15 +15,14 @@ public class OrderReceiver {
         this.ordersRepository = ordersRepository;
     }
 
-    public void receiveOrder(EnqueuedOrder enqueuedOrder) {
-        if (ordersRepository.existsByCodigoPedido(enqueuedOrder.codigoPedido())) {
+    public void receiveOrder(CreateOrderData createOrderData) {
+        if (ordersRepository.existsByCodigoPedido(createOrderData.codigoPedido())) {
             log.info("Order already persisted! Ignoring it.");
             return;
         }
 
-        Order order = new Order(enqueuedOrder);
-        Order savedOrder = ordersRepository.save(order);
-        log.info("Persisted order id: {}", savedOrder.getOrderId());
+        OrderDetails savedOrder = ordersRepository.save(createOrderData);
+        log.info("Persisted order id: {}", savedOrder.orderId());
     }
 
 }

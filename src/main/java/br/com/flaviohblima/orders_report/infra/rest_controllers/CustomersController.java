@@ -2,7 +2,7 @@ package br.com.flaviohblima.orders_report.infra.rest_controllers;
 
 import br.com.flaviohblima.orders_report.application.CustomerReports;
 import br.com.flaviohblima.orders_report.domain.CustomerOrdersCount;
-import br.com.flaviohblima.orders_report.domain.EnqueuedOrder;
+import br.com.flaviohblima.orders_report.domain.OrderDetails;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
@@ -29,10 +29,10 @@ public class CustomersController {
     }
 
     @GetMapping("/{codigoCliente}/orders")
-    public ResponseEntity<Page<EnqueuedOrder>> getCustomerOrders(
+    public ResponseEntity<Page<OrderDetails>> getCustomerOrders(
             @PathVariable Long codigoCliente,
             @PageableDefault(size = 20, sort = {"createdAt"}) Pageable pageable) {
-        Page<EnqueuedOrder> orders = customerReports.getCustomerOrders(codigoCliente, pageable);
+        Page<OrderDetails> orders = customerReports.getCustomerOrders(codigoCliente, pageable);
         return ResponseEntity.ok(orders);
     }
 

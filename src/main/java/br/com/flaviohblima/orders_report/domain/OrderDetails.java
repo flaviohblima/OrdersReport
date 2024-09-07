@@ -5,16 +5,18 @@ import br.com.flaviohblima.orders_report.infra.persistence.Order;
 import java.time.LocalDateTime;
 import java.util.List;
 
-public record EnqueuedOrder(
+public record OrderDetails(
+        Long orderId,
         Long codigoPedido,
         Long codigoCliente,
-        List<EnqueuedItem> itens,
+        List<ItemDetails> itens,
         LocalDateTime createdAt
 ) {
 
-    public EnqueuedOrder(Order order) {
-        this(order.getCodigoPedido(), order.getCodigoCliente(),
-                order.getItens().stream().map(EnqueuedItem::new).toList(),
+    public OrderDetails(Order order) {
+        this(order.getOrderId(), order.getCodigoPedido(), order.getCodigoCliente(),
+                order.getItens().stream().map(ItemDetails::new).toList(),
                 order.getCreatedAt());
     }
+
 }

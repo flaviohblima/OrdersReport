@@ -1,7 +1,7 @@
 package br.com.flaviohblima.orders_report.infra.rest_controllers;
 
 import br.com.flaviohblima.orders_report.application.OrderReports;
-import br.com.flaviohblima.orders_report.domain.EnqueuedOrder;
+import br.com.flaviohblima.orders_report.domain.CreateOrderData;
 import br.com.flaviohblima.orders_report.domain.OrderTotalCost;
 import br.com.flaviohblima.orders_report.infra.queues.OrdersQueuePublisher;
 import org.springframework.http.ResponseEntity;
@@ -20,8 +20,8 @@ public class OrdersController {
     }
 
     @PostMapping
-    public ResponseEntity<PublishResponse> publishOrder(@RequestBody EnqueuedOrder enqueuedOrder) {
-        ordersPublisher.publishOrderToQueue(enqueuedOrder);
+    public ResponseEntity<PublishResponse> publishOrder(@RequestBody CreateOrderData createOrderData) {
+        ordersPublisher.publishOrderToQueue(createOrderData);
         return ResponseEntity.ok(new PublishResponse("Message Published!"));
     }
 
