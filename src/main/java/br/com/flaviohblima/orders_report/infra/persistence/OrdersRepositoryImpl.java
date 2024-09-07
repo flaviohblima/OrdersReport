@@ -5,7 +5,9 @@ import br.com.flaviohblima.orders_report.domain.CreateOrderData;
 import br.com.flaviohblima.orders_report.domain.OrderDetails;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class OrdersRepositoryImpl implements OrdersRepository {
 
     private final OrdersJpaRepository jpaRepository;
