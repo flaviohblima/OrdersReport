@@ -22,7 +22,7 @@ public class OrdersController {
     @PostMapping
     public ResponseEntity<PublishResponse> publishOrder(@RequestBody CreateOrderData createOrderData) {
         ordersPublisher.publishOrderToQueue(createOrderData);
-        return ResponseEntity.ok(new PublishResponse("Message Published!"));
+        return ResponseEntity.ok(new PublishResponse("Order published!"));
     }
 
     @GetMapping("/{codigoPedido}/total")
