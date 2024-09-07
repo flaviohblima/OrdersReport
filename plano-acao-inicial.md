@@ -18,8 +18,8 @@ Estimativa total: **35 horas**
 
 ### História 3: Adicionar endpoints para relatórios
 - [ ] Tarefa 6 **[5 horas]**: Desenvolver as funcionalidades da API REST para consultar:
-  - [ ] Valor total do pedido
-  - [ ] Quantidade de pedidos por cliente
+  - [/] Valor total do pedido
+  - [/] Quantidade de pedidos por cliente
   - [ ] Lista de pedidos realizados por cliente.
 - [ ] Tarefa 7 **[5 horas]**: Implementar testes unitários e de integração para garantir as funcionalidades da aplicação (garantir cobertura de testes).
 

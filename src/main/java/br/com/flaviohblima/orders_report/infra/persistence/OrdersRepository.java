@@ -7,4 +7,6 @@ import org.springframework.stereotype.Repository;
 public interface OrdersRepository extends JpaRepository<Order, Long> {
 
     boolean existsByCodigoPedido(Long codigoPedido);
+
+    Long countByCodigoCliente(Long codigoCliente);
 }
