@@ -3,13 +3,13 @@ package br.com.flaviohblima.orders_report.infra.persistence;
 import br.com.flaviohblima.orders_report.domain.CreateItemData;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Positive;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Table(name = "order_items")
-@Data
+@Getter
+@Setter
+@EqualsAndHashCode(of = "itemId")
 @NoArgsConstructor
 @AllArgsConstructor
 public class Item {

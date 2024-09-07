@@ -2,9 +2,7 @@ package br.com.flaviohblima.orders_report.infra.persistence;
 
 import br.com.flaviohblima.orders_report.domain.CreateOrderData;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -12,7 +10,9 @@ import java.util.List;
 
 @Entity
 @Table(name = "orders")
-@Data
+@Getter
+@Setter
+@EqualsAndHashCode(of = "orderId")
 @NoArgsConstructor
 @AllArgsConstructor
 public class Order {
