@@ -13,14 +13,14 @@ Estimativa total: **35 horas**
 ### História 2: Criar aplicação e implementar recepção de mensagens
 - [x] Tarefa 2 **[1 hora / 1h30]**: Criar a estrutura inicial do projeto Spring Boot com Java 21, configurando a conexão com o PostgreSQL.
 - [x] Tarefa 3 **[5 horas / 6h]**: Implementar o microsserviço para consumir mensagens da fila RabbitMQ e armazenar os dados no PostgreSQL (modelagem das tabelas).
-- [x] Tarefa 4 **[2 horas]**: Configurar o Dockerfile e Docker Compose para orquestrar a aplicação, o RabbitMQ e o PostgreSQL.
+- [x] Tarefa 4 **[2 horas / 1h30]**: Configurar o Dockerfile e Docker Compose para orquestrar a aplicação, o RabbitMQ e o PostgreSQL.
 - [x] Tarefa 5 **[3 horas / 1h]**: Implementar uma forma de publicar mensagens via REST no RabbitMQ para testes.
 
 ### História 3: Adicionar endpoints para relatórios
 - [ ] Tarefa 6 **[5 horas]**: Desenvolver as funcionalidades da API REST para consultar:
-  - Valor total do pedido
-  - Quantidade de pedidos por cliente
-  - Lista de pedidos realizados por cliente.
+  - [ ] Valor total do pedido
+  - [ ] Quantidade de pedidos por cliente
+  - [ ] Lista de pedidos realizados por cliente.
 - [ ] Tarefa 7 **[5 horas]**: Implementar testes unitários e de integração para garantir as funcionalidades da aplicação (garantir cobertura de testes).
 
 ### História 4: Publicação da Imagem e Implantação na AWS

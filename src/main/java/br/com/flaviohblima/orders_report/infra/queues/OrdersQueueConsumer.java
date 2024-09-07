@@ -18,7 +18,7 @@ public class OrdersQueueConsumer {
 
     @RabbitListener(queues = "${app.streams.rabbitmq.ordersQueue}")
     public void receiveOrderMessage(EnqueuedOrder enqueuedOrder) {
-       log.info(enqueuedOrder.toString());
+        log.info(enqueuedOrder.toString());
         receiver.receiveOrder(enqueuedOrder);
     }
 }
