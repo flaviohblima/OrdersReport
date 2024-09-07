@@ -3,6 +3,7 @@ package br.com.flaviohblima.orders_report.application;
 import br.com.flaviohblima.orders_report.domain.OrderTotalCost;
 import br.com.flaviohblima.orders_report.infra.persistence.ItemsRepository;
 import br.com.flaviohblima.orders_report.infra.persistence.OrdersRepository;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -19,10 +20,10 @@ public class OrderReports {
     }
 
     public OrderTotalCost getOrderTotalCost(Long codigoPedido) {
-        boolean pedidoExists = ordersRepository.existsByCodigoPedido(codigoPedido);
+        boolean existsOrder = ordersRepository.existsByCodigoPedido(codigoPedido);
 
-        if(!pedidoExists) {
-            throw new RuntimeException("Pedido não encontrado!");
+        if(!existsOrder) {
+            throw new EntityNotFoundException("Pedido não encontrado!");
         }
 
         Float totalCost = itemsRepository.sumPricesByCodigoPedido(codigoPedido);

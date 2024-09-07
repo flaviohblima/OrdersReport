@@ -17,10 +17,10 @@ Estimativa total: **35 horas**
 - [x] Tarefa 5 **[3 horas / 1h]**: Implementar uma forma de publicar mensagens via REST no RabbitMQ para testes.
 
 ### História 3: Adicionar endpoints para relatórios
-- [ ] Tarefa 6 **[5 horas]**: Desenvolver as funcionalidades da API REST para consultar:
-  - [/] Valor total do pedido
-  - [/] Quantidade de pedidos por cliente
-  - [ ] Lista de pedidos realizados por cliente.
+- [x] Tarefa 6 **[5 horas / 2h30 (até agora)]**: Desenvolver as funcionalidades da API REST para consultar:
+  - [x] Valor total do pedido
+  - [x] Quantidade de pedidos por cliente
+  - [x] Lista de pedidos realizados por cliente.
 - [ ] Tarefa 7 **[5 horas]**: Implementar testes unitários e de integração para garantir as funcionalidades da aplicação (garantir cobertura de testes).
 
 ### História 4: Publicação da Imagem e Implantação na AWS
