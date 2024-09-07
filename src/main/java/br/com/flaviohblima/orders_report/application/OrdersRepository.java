@@ -1,12 +1,10 @@
-package br.com.flaviohblima.orders_report.infra.persistence;
+package br.com.flaviohblima.orders_report.application;
 
+import br.com.flaviohblima.orders_report.infra.persistence.Order;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
-@Repository
-public interface OrdersRepository extends JpaRepository<Order, Long> {
+public interface OrdersRepository {
 
     boolean existsByCodigoPedido(Long codigoPedido);
 
@@ -14,4 +12,5 @@ public interface OrdersRepository extends JpaRepository<Order, Long> {
 
     Page<Order> findByCodigoCliente(Long codigoCliente, Pageable pageable);
 
+    Order save(Order order);
 }

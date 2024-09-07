@@ -3,13 +3,10 @@ package br.com.flaviohblima.orders_report.application;
 import br.com.flaviohblima.orders_report.domain.CustomerOrdersCount;
 import br.com.flaviohblima.orders_report.domain.EnqueuedOrder;
 import br.com.flaviohblima.orders_report.infra.persistence.Order;
-import br.com.flaviohblima.orders_report.infra.persistence.OrdersRepository;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-@Slf4j
 @Service
 public class CustomerReports {
 

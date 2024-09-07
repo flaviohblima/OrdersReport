@@ -1,8 +1,6 @@
 package br.com.flaviohblima.orders_report.application;
 
 import br.com.flaviohblima.orders_report.domain.OrderTotalCost;
-import br.com.flaviohblima.orders_report.infra.persistence.ItemsRepository;
-import br.com.flaviohblima.orders_report.infra.persistence.OrdersRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
