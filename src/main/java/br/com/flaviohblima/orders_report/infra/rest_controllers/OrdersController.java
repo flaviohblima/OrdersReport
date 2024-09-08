@@ -4,6 +4,7 @@ import br.com.flaviohblima.orders_report.application.OrderReports;
 import br.com.flaviohblima.orders_report.domain.CreateOrderData;
 import br.com.flaviohblima.orders_report.domain.OrderTotalCost;
 import br.com.flaviohblima.orders_report.infra.queues.OrdersQueuePublisher;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,7 +21,7 @@ public class OrdersController {
     }
 
     @PostMapping
-    public ResponseEntity<PublishResponse> publishOrder(@RequestBody CreateOrderData createOrderData) {
+    public ResponseEntity<PublishResponse> publishOrder(@RequestBody @Valid CreateOrderData createOrderData) {
         ordersPublisher.publishOrderToQueue(createOrderData);
         return ResponseEntity.ok(new PublishResponse("Order published!"));
     }
