@@ -2,6 +2,7 @@ package br.com.flaviohblima.orders_report.infra.queues;
 
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.core.QueueBuilder;
+import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitAdmin;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -11,14 +12,19 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
+import org.springframework.context.annotation.Primary;
 
 @Configuration
-@Profile("consumer-producer")
 public class RabbitMQConfiguration {
 
     @Value("${app.streams.rabbitmq.ordersQueue}")
     private String queueName;
+
+    @Value("${spring.rabbitmq.host:localhost}")
+    private String host;
+
+    @Value("${spring.rabbitmq.port:5672}")
+    private Integer port;
 
     @Bean
     public Queue createOrdersQueue() {
@@ -26,6 +32,13 @@ public class RabbitMQConfiguration {
     }
 
     @Bean
+    @Primary
+    public ConnectionFactory createConnectionFactory() {
+        return new CachingConnectionFactory(host, port);
+    }
+
+    @Bean
+    @Primary
     public RabbitAdmin createRabbitAdmin(ConnectionFactory connectionFactory) {
         return new RabbitAdmin(connectionFactory);
     }
@@ -36,13 +49,15 @@ public class RabbitMQConfiguration {
     }
 
     @Bean
+    @Primary
     public Jackson2JsonMessageConverter createJsonMessageConverter() {
         return new Jackson2JsonMessageConverter();
     }
 
     @Bean
-    public RabbitTemplate createRabbitTemplate(ConnectionFactory connectionFactory,
-                                               Jackson2JsonMessageConverter messageConverter) {
+    @Primary
+    public RabbitTemplate createRabbitTemplateJson(ConnectionFactory connectionFactory,
+                                                   Jackson2JsonMessageConverter messageConverter) {
         RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory);
         rabbitTemplate.setMessageConverter(messageConverter);
         return rabbitTemplate;
