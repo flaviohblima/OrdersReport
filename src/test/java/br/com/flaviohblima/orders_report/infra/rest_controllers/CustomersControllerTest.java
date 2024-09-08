@@ -3,7 +3,9 @@ package br.com.flaviohblima.orders_report.infra.rest_controllers;
 import br.com.flaviohblima.orders_report.application.CustomerReports;
 import br.com.flaviohblima.orders_report.domain.CustomerOrdersCount;
 import br.com.flaviohblima.orders_report.domain.OrderDetails;
+import br.com.flaviohblima.orders_report.integration_tests.RabbitMQTestContainerConfiguration;
 import org.junit.jupiter.api.Test;
+import org.springframework.amqp.rabbit.test.context.SpringRabbitTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.json.AutoConfigureJsonTesters;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -27,9 +29,10 @@ import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 
 @SpringBootTest
+@SpringRabbitTest
 @AutoConfigureMockMvc
 @AutoConfigureJsonTesters
-class CustomersControllerTest {
+class CustomersControllerTest extends RabbitMQTestContainerConfiguration {
 
     @Autowired
     private MockMvc mvc;

@@ -6,8 +6,10 @@ import br.com.flaviohblima.orders_report.domain.CreateOrderData;
 import br.com.flaviohblima.orders_report.domain.OrderTotalCost;
 import br.com.flaviohblima.orders_report.infra.queues.OrdersQueuePublisher;
 import br.com.flaviohblima.orders_report.infra.rest_controllers.exceptions.ErrorDetails;
+import br.com.flaviohblima.orders_report.integration_tests.RabbitMQTestContainerConfiguration;
 import jakarta.persistence.EntityNotFoundException;
 import org.junit.jupiter.api.Test;
+import org.springframework.amqp.rabbit.test.context.SpringRabbitTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.json.AutoConfigureJsonTesters;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -27,9 +29,10 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 
 @SpringBootTest
+@SpringRabbitTest
 @AutoConfigureMockMvc
 @AutoConfigureJsonTesters
-class OrdersControllerTest {
+class OrdersControllerTest extends RabbitMQTestContainerConfiguration {
 
     @Autowired
     private MockMvc mvc;
