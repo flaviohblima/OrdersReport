@@ -22,7 +22,7 @@ services:
       - "5432:5432"
 
   app:
-    image: 'orders-report:latest'
+    image: 'flaviohblima/orders-report:latest'
     build:
       context: .
     container_name: app
