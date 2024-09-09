@@ -1,0 +1,81 @@
+{
+	"info": {
+		"_postman_id": "384599be-92c3-459c-8842-42d565a1cab0",
+		"name": "Orders API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "5070098"
+	},
+	"item": [
+		{
+			"name": "Publish Orders",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"codigoPedido\": 1001,\r\n    \"codigoCliente\": 1,\r\n    \"itens\": [\r\n        {\r\n            \"produto\": \"lápis\",\r\n            \"quantidade\": 100,\r\n            \"preco\": 1.10\r\n        },\r\n        {\r\n            \"produto\": \"caderno\",\r\n            \"quantidade\": 10,\r\n            \"preco\": 1.00\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/orders"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Total Cost of Order",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/orders/1001/total"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Customer count of Orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/customers/1/orders/count"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Customer count of Orders Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/customers/1/orders?size=2&page=1&sort=createdAt,ASC",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customers",
+						"1",
+						"orders"
+					],
+					"query": [
+						{
+							"key": "size",
+							"value": "2"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "sort",
+							"value": "createdAt,ASC"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
