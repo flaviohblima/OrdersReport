@@ -19,9 +19,9 @@ class ItemsRepositoryImplTest {
     private ItemsJpaRepository jpaRepository;
 
     @Test
-    void sumPricesByCodigoPedido() {
-        when(jpaRepository.sumPricesByCodigoPedido(1L)).thenReturn(2f);
-        Float actual = itemsRepository.sumPricesByCodigoPedido(1L);
+    void calcTotalByCodigoPedido() {
+        when(jpaRepository.calcTotalByCodigoPedido(1L)).thenReturn(2f);
+        Float actual = itemsRepository.calcTotalByCodigoPedido(1L);
         assertEquals(2f, actual);
     }
 }

@@ -13,8 +13,8 @@ public class ItemsRepositoryImpl implements ItemsRepository {
         this.jpaRepository = jpaRepository;
     }
 
-    public Float sumPricesByCodigoPedido(Long codigoPedido) {
-        return jpaRepository.sumPricesByCodigoPedido(codigoPedido);
+    public Float calcTotalByCodigoPedido(Long codigoPedido) {
+        return jpaRepository.calcTotalByCodigoPedido(codigoPedido);
     }
 
 }

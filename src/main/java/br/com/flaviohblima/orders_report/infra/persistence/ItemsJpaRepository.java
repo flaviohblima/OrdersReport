@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ItemsJpaRepository extends JpaRepository<Item, Long> {
 
-    @Query("SELECT sum(i.preco) FROM Item i WHERE i.order.codigoPedido = :codigoPedido")
-    Float sumPricesByCodigoPedido(Long codigoPedido);
+    @Query("SELECT sum(i.preco * i.quantidade) FROM Item i WHERE i.order.codigoPedido = :codigoPedido")
+    Float calcTotalByCodigoPedido(Long codigoPedido);
 }

@@ -30,14 +30,14 @@ class OrderReportsTest {
         assertThrows(EntityNotFoundException.class, () -> {
             service.getOrderTotalCost(1L);
         });
-        verify(itemsRepository, never()).sumPricesByCodigoPedido(1L);
+        verify(itemsRepository, never()).calcTotalByCodigoPedido(1L);
     }
 
     @Test
     void getOrderTotalCostShouldGetTotalCost() {
         OrderTotalCost expected = new OrderTotalCost(1L, 2f);
         when(ordersRepository.existsByCodigoPedido(1L)).thenReturn(true);
-        when(itemsRepository.sumPricesByCodigoPedido(1L)).thenReturn(2f);
+        when(itemsRepository.calcTotalByCodigoPedido(1L)).thenReturn(2f);
 
         OrderTotalCost actual = service.getOrderTotalCost(1L);
         assertThat(actual).isEqualTo(expected);

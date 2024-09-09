@@ -24,7 +24,7 @@ public class OrderReports {
             throw new EntityNotFoundException("Pedido não encontrado!");
         }
 
-        Float totalCost = itemsRepository.sumPricesByCodigoPedido(codigoPedido);
+        Float totalCost = itemsRepository.calcTotalByCodigoPedido(codigoPedido);
         return new OrderTotalCost(codigoPedido, totalCost);
     }
 
