@@ -26,15 +26,15 @@ em manter um modelo estável de dados.
 Decidi criar um endpoint auxiliar na aplicação para envio de pedidos. Isso facilitou os testes manuais.
 Abaixo está o diagrama da Arquitetura da solução.
 
-![Arquitetura da solução](relatorio_files/arquitetura-solucao.png)
+![Arquitetura da solução](arquitetura-solucao.png)
 
 O diagrama abaixo representa o fluxo normal de recepção de pedidos, via RabbitMQ.
 
-![Recepção do pedido no Orders-Report](relatorio_files/sequence-diagram-receive-order.png)
+![Recepção do pedido no Orders-Report](sequence-diagram-receive-order.png)
 
 O diagrama abaixo representa o envio de pedidos via rest api para facilitar o uso da API.
 
-![Publicação do pedido no Orders-Report](relatorio_files/sequence-diagram-publish-order.png)
+![Publicação do pedido no Orders-Report](sequence-diagram-publish-order.png)
 
 ## Modelagem da base de dados
 
@@ -43,14 +43,14 @@ relacionam com os pedidos através da foreign key do order_id.
 Decidi por criar um id para os itens e para os pedidos. Além de garantir integridade do banco de dados, isso pode ajudar
 em eventuais migrações de dados.
 
-![Modelo de tabelas do banco de dados](relatorio_files/modelo-dados.png)
+![Modelo de tabelas do banco de dados](modelo-dados.png)
 
 ## Diagrama de implantação da solução
 
 Abaixo está o diagrama de "implantação" da solução, onde cada recurso se encontra em um container docker separado.
 O arquivo docker compose foi criado pensando nessa estrutura.
 
-![Diagrama de implantação](relatorio_files/deploy-diagram.png)
+![Diagrama de implantação](deploy-diagram.png)
 
 ## Diagrama de infra com os recursos cloud utilizados
 
@@ -58,14 +58,14 @@ Não consegui realizar o deploy na AWS a tempo. Mas minha intenção era registr
 imagens do app e do RabbitMQ no ECS, além de usar o RDS gratuito do PostgreSQL. Disponibilizaria um LoadBalancer aberto
 para a web para integração externa.
 
-![Arquitetura de implentação na AWS](relatorio_files/aws-arquitecture.png)
+![Arquitetura de implentação na AWS](aws-arquitecture.png)
 
 ## Evidência de Testes funcionais da aplicação
 
 Abaixo a evidência do uso do Coverage na aplicação para garantir uma boa cobertura de testes. É possível ver esses
 mesmos testes no resultado do build da aplicação feita pelo github actions deste repositório.
 
-![Cobertura de testes](relatorio_files/tests-coverage.png)
+![Cobertura de testes](tests-coverage.png)
 
 ## Repositório do github
 
