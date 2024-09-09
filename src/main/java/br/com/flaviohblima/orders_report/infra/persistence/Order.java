@@ -30,7 +30,7 @@ public class Order {
     @Column(nullable = false)
     private LocalDateTime createdAt = LocalDateTime.now();
 
-    @OneToMany(mappedBy = "order", cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "order", cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
     private List<Item> itens = new ArrayList<>();
 
     public Order(CreateOrderData createOrderData) {
