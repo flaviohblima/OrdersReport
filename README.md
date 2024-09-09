@@ -5,12 +5,12 @@ permitindo gerar relatórios com dados dos pedidos.
 
 ## Plano de ação inicial versus o que foi realizado
 
-Descrito no arquivo [plano-acao-inicial-vs-realizado.md](relatorio_files/plano-acao-inicial-vs-realizado.md).
+Descrito no arquivo [relatorio_files/plano-acao-inicial-vs-realizado.md](relatorio_files/plano-acao-inicial-vs-realizado.md).
 
 ## Relatório técnico
 
 É possível encontrar o relatório técnico do projeto no
-arquivo [relatorio-tecnico.md](relatorio_files/relatorio-tecnico.md).
+arquivo [relatorio_files/relatorio-tecnico.md](relatorio_files/relatorio-tecnico.md).
 
 ## Executando o Projeto
 
@@ -21,7 +21,7 @@ docker compose up
 ```
 
 Para testar os endpoints da aplicação, recomendo que você faça o download do arquivo
-[Orders API.postman_collection.json](relatorio_files/Orders API.postman_collection.json).
+[relatorio_files/orders_api_postman_collection.json](relatorio_files/orders_api_postman_collection.json).
 Ele contém a coleção de endpoints disponíveis para interação com a aplicação.
 
 Na coleção você irá encontrar os seguintes métodos:
