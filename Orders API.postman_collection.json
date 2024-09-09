@@ -43,7 +43,7 @@
 			"response": []
 		},
 		{
-			"name": "Get Customer count of Orders Copy",
+			"name": "Get Customer orders",
 			"request": {
 				"method": "GET",
 				"header": [],
