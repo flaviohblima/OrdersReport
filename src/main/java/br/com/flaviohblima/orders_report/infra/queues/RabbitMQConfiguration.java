@@ -26,6 +26,12 @@ public class RabbitMQConfiguration {
     @Value("${spring.rabbitmq.port:5672}")
     private Integer port;
 
+    @Value("${spring.rabbitmq.username:guest}")
+    private String username;
+
+    @Value("${spring.rabbitmq.password:guest}")
+    private String password;
+
     @Bean
     public Queue createOrdersQueue() {
         return QueueBuilder.nonDurable(queueName).build();
@@ -33,8 +39,11 @@ public class RabbitMQConfiguration {
 
     @Bean
     @Primary
-    public ConnectionFactory createConnectionFactory() {
-        return new CachingConnectionFactory(host, port);
+    public CachingConnectionFactory createConnectionFactory() {
+        CachingConnectionFactory connectionFactory = new CachingConnectionFactory(host, port);
+        connectionFactory.setUsername(username);
+        connectionFactory.setPassword(password);
+        return connectionFactory;
     }
 
     @Bean
