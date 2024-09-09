@@ -24,7 +24,7 @@ Estimativa total: **35 horas**
 - [x] Tarefa 7 **[5 horas / 10h]**: Implementar testes unitários e de integração para garantir as funcionalidades da aplicação (garantir cobertura de testes).
 
 ### História 4: Publicação da Imagem e Implantação na AWS
-- [ ] Tarefa 8 **[1 hora]**: Criar a imagem Docker da aplicação e publicá-la no Docker Hub.
+- [x] Tarefa 8 **[1 hora / 40min]**: Criar a imagem Docker da aplicação e publicá-la no Docker Hub. Criar um script de CI no Github pelo menos para fazer build e testes da aplicação.
 - [ ] Tarefa 9 **[5 horas]**: Configurar a infraestrutura na AWS, incluindo a configuração do RDS PostgreSQL e o deploy da aplicação.
 
 ### História 5: Testes e Validação
